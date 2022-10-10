@@ -4,7 +4,7 @@ const ClosePriceModel = require("./model");
 const cors = require("cors");
 require("./connection")
 
-const port = process.env.PORT || 3002;
+const port = 3003;
 app.use(cors());
 app.use(express.json());
 

@@ -28,11 +28,12 @@ async function run() {
         return price
         })
         .catch(function (error) {
-        console.log(error);
+        console.log("Got the error ");
+        return 11.755
         });
     console.log(data)
 
-    axios.put(`http://localhost:3002/kws/v4/closeprice/${id}`,{
+    axios.put(`http://localhost:3003/kws/v4/closeprice/${id}`,{
         GCStoUSDT: data
     }).then((res)=>{
         console.log(res)
@@ -41,5 +42,5 @@ async function run() {
 
 setInterval(async()=>{
     await run()
-},5000)
+},10000)
 
