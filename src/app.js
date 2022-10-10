@@ -21,6 +21,15 @@ app.get("/kws/v4/closeprice", async(req, res)=>{
     }
 });
 
+app.put("/kws/v4/closeprice/:id",(req,res)=>{
+  try {
+    const data = new ClosePriceModel(req.body)
+    data.save();
+    res.send(data)
+  } catch (error) {
+    
+  }
+})
 
 app.put("/kws/v4/closeprice/:id",(req,res)=>{
     const _id = req.params.id
